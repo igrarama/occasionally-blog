@@ -4,6 +4,9 @@ date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
 ---
 
+Left here because even the best of us need an example.
+---
+
 This is my first post on my new fake blog! How exciting!
 
 I'm sure I'll write a lot more interesting things in the future.
