@@ -3,17 +3,17 @@ import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
+import { getAllPosts, getPostBySlug } from '../lib/api'
 import Head from 'next/head'
 import Post from '../types/post'
+import markdownToHtml from '../lib/markdownToHtml'
 
 type Props = {
-  allPosts: Post[]
+  heroPost: Post,
+  morePosts: Post[]
 }
 
-const Index = ({ allPosts }: Props) => {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+const Index = ({ heroPost, morePosts }: Props) => {
   return (
     <>
       <Layout>
@@ -27,7 +27,7 @@ const Index = ({ allPosts }: Props) => {
               title={heroPost.title}
               date={heroPost.date}
               slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
+              content={heroPost.content}
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
@@ -44,12 +44,21 @@ export const getStaticProps = async () => {
     'title',
     'date',
     'slug',
-    'author',
-    'coverImage',
     'excerpt',
   ])
 
+  const heroPostContent = await markdownToHtml(getPostBySlug(allPosts[0].slug, ['content']).content || '')
+
+  const heroPost = {
+    ...allPosts[0],
+    content: heroPostContent
+  }
+  const morePosts = allPosts.slice(1)
+
   return {
-    props: { allPosts },
+    props: {
+      heroPost,
+      morePosts
+    },
   }
 }

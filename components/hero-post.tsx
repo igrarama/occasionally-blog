@@ -1,22 +1,23 @@
 import DateFormatter from './date-formatter'
 import Link from 'next/link'
+import PostBody from './post-body'
 
 type Props = {
   title: string
   date: string
-  excerpt: string
+  content: string
   slug: string
 }
 
 const HeroPost = ({
   title,
   date,
-  excerpt,
   slug,
+  content
 }: Props) => {
   return (
-    <section>
-      <div className="mb-20 md:mb-10">
+    <section className="max-w-2xl mx-auto">
+      <div className="mb-20 md:mb-28 ">
         <div className="align-middle">
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
             <Link as={`/posts/${slug}`} href="/posts/[slug]">
@@ -27,11 +28,7 @@ const HeroPost = ({
             <DateFormatter dateString={date} />
           </div>
           <div>
-            <p className="text-lg leading-relaxed mb-4">
-              {
-                excerpt ? excerpt : null
-              }
-            </p>
+            <PostBody content={content} />
           </div>
         </div>
       </div>
