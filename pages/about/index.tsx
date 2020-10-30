@@ -12,7 +12,7 @@ const Index = () => {
         </Head>
         <Container>
           <Header />
-          <div>about...</div>
+          <div>I'm really not that interesting. Yet.</div>
         </Container>
       </Layout>
     </>
