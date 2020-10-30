@@ -13,10 +13,8 @@ const Footer = () => {
           {` `}
           and modified by
           {` `}
-          <Link href="/about">
-            <span className="hover:underline" style={{ cursor: 'pointer' }}>
-              me
-            </span>
+          <Link  as={`/about`} href="/about">
+            <a className="hover:underline">me</a>
           </Link>
           .
           {` `}

@@ -24,7 +24,13 @@ const PostPreview = ({
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      <p className="text-lg leading-relaxed mb-4">
+        {excerpt}
+        {` `}
+        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+          <a className="hover:underline text-blue-400">Read more</a>
+        </Link>
+      </p>
     </div>
   )
 }
