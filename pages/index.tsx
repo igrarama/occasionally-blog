@@ -18,7 +18,7 @@ const Index = ({ heroPost, morePosts }: Props) => {
     <>
       <Layout>
         <Head>
-          <title>Occasionally.Blog</title>
+          <title>Occasionally.</title>
         </Head>
         <Container>
           <Intro author={{ name: 'Ron Yoskovich', picture: '/assets/blog/authors/ron_2018.jpg' }} />
