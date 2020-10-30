@@ -1,11 +1,4 @@
 import Link from 'next/link'
-import Author from '../types/author'
-import Avatar from './avatar'
-
-type Props = {
-  title: string,
-  author: Author
-}
 
 const Header = () => {
   return (
