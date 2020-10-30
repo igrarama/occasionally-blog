@@ -3,7 +3,7 @@ title: 'Feeling Clever About a Name'
 excerpt: 'Names are important. Having a good one will only improve things.'
 date: '2020-10-30T14:48:55.589Z'
 ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+  url: ''
 ---
 
 Names are important. Seems obvious though I only really thought about it after one of my favorite authors, Patrick Rothfuss, wrote it in a book. Having that thought in mind one must look for an appropriate name whenever one wishes to make something important.
